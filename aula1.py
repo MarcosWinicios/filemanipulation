@@ -5,12 +5,12 @@
 # num vetor a média de cada aluno, imprima o número de alunos com média maior
 # ou igual a 7.0.
 
-def file_read(fname):  # Lendo conteúdo de uma arquivo
+def fileRead(fname):  # Lendo conteúdo de uma arquivo
     txt = open(fname)
     print(txt.read())
 
 
-def file_create_and_write(fname):
+def fileCreateWrite(fname):  # Criar um arquivo, escrever e mostrar o conteúdo:
     with open(fname, "w") as myfile:
         myfile.write("Python Exercises\n")
         myfile.write("Java Exercises")
@@ -18,5 +18,13 @@ def file_create_and_write(fname):
     print(txt.read())
 
 
-file_read('/home/marcosw/Workspaces/Python/test.txt')
-file_create_and_write('/home/marcosw/Workspaces/Python/abc.txt')
+def storeLinesFile(fname):
+    with open(fname) as f:
+        # Content_list is the list that contains the read lines
+        content_list = f.readlines()
+        print(content_list)
+
+
+fileRead('/home/marcosw/Workspaces/Python/test.txt')
+fileCreateWrite('/home/marcosw/Workspaces/Python/abc.txt')
+storeLinesFile('/home/marcosw/Workspaces/Python/abc.txt')
