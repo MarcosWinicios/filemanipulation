@@ -18,13 +18,35 @@ def fileCreateWrite(fname):  # Criar um arquivo, escrever e mostrar o conteúdo:
     print(txt.read())
 
 
-def storeLinesFile(fname):
+def storeLinesFile(fname):  # Armazenar as linhas de um arquivo em uma lista:
     with open(fname) as f:
         # Content_list is the list that contains the read lines
         content_list = f.readlines()
         print(content_list)
 
 
+def storeLinesFile2(fname):  # Armazenar as linhas de um arquivo em uma lista
+    content_array = []
+    with open(fname) as f:
+        # Content_list is the list that contains the read lines.
+        for line in f:
+            content_array.append(line)
+        print(content_array)
+
+
+def writeListInFile(list=[]):  # Escrever uma lista em um arquivo:
+    with open('/home/marcosw/Workspaces/Python/abc.txt', "w") as myfile:
+        for c in list:
+            myfile.write("%s\n" % c)
+    content = open('/home/marcosw/Workspaces/Python/abc.txt')
+    print(content.read())
+
+
 fileRead('/home/marcosw/Workspaces/Python/test.txt')
 fileCreateWrite('/home/marcosw/Workspaces/Python/abc.txt')
+storeLinesFile('/home/marcosw/Workspaces/Python/abc.txt')
+storeLinesFile2('/home/marcosw/Workspaces/Python/abc.txt')
+
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+writeListInFile(color)
 storeLinesFile('/home/marcosw/Workspaces/Python/abc.txt')
